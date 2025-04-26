@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JAPAN TOUR TRAVEL CERTIFICATE</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    input {
+      padding: 10px;
+      font-size: 18px;
+      width: 300px;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .message {
+      font-size: 24px;
+      margin-top: 30px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💌</h1>
+
+  <div>
+    <input id="codeInput" type="text" placeholder="바코드 번호를 입력해볼래?" />
+    <button onclick="showMessage()">입력</button>
+  </div>
+
+  <div id="output" class="message"></div>
+
+  <script>
+    const messages = {
+      "2025050105050104": "To my lovely 0104,",
+      "2025050105051020": "💌 Will you marry me? 💌\nFrom your love 1020."
+    };
+
+    function showMessage() {
+      const code = document.getElementById('codeInput').value.trim().replace(/\s+/g, '');
+      const output = document.getElementById('output');
+    
+      if (code && messages[code]) {
+        output.innerHTML = messages[code].replace(/\n/g, "<br>");
+      } else {
+        output.textContent = "바코드 번호를 다시 입력해볼래?";
+      }
+    }
+  </script>
+
+</body>
+</html>
